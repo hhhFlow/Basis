@@ -1,17 +1,16 @@
 #include <iostream>
-#include "insert_sort.h"
 #include "bubble_sort.h"
+#include "insert_sort.h"
+#include "merge_sort.h"
 
+int main() {
+  int a[] = {654, 17, 39, 21, 5, 1, 2, 8, 99, 1, 45, 34, 66};
 
-int main(){
+  merge_sort(a, sizeof(a) / sizeof(int));
 
-    int a[] = {654,17,39,21,5,1,2,8,99,1,45,34,66};
-
-    bubble_sort(a,13);
-
-    for(int i = 0; i<13;++i){
-        std::cout<<" "<<a[i];
-    }
-
-    return 0;
+  for (int i = 0; i < sizeof(a) / sizeof(int); ++i) {
+    std::cout << " " << a[i];
+  }
+  std::cout << std::endl;
+  return 0;
 }
